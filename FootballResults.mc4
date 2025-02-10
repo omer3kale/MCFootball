@@ -1,0 +1,17 @@
+package football;
+
+grammar FootballResults {
+
+  FootballResults = "FootballResults" "{" Matches "}";
+  
+  Matches = Match ("," Match)*;
+  
+  Match = "Match" "{" 
+            "HomeTeam" ":" homeTeam:Name "," 
+            "AwayTeam" ":" awayTeam:Name "," 
+            "HomeScore" ":" homeScore:INT "," 
+            "AwayScore" ":" awayScore:INT 
+          "}";
+  
+  Name = /[a-zA-Z_][a-zA-Z0-9_]*/;
+}

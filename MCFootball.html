@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Football Match Results</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { color: #333; }
+    nav { background-color: #333; padding: 10px; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 10px; text-align: left; border: 1px solid #ddd; }
+    th { background-color: #f2f2f2; }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+    footer { background-color: #333; color: white; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%; }
+    button { background-color: #333; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+    button:hover { background-color: #555; }
+  </style>
+  <script>
+    function highlightRow(row) {
+      row.style.backgroundColor = '#ffff99';
+    }
+    function unhighlightRow(row) {
+      row.style.backgroundColor = '';
+    }
+    function displayResults() {
+      var resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = `<table>
+        <tr><th>Home Team</th><th>Away Team</th><th>Home Score</th><th>Away Score</th></tr>
+        <tr onmouseover="highlightRow(this)" onmouseout="unhighlightRow(this)"><td>TeamA</td><td>TeamB</td><td>2</td><td>1</td></tr>
+        <tr onmouseover="highlightRow(this)" onmouseout="unhighlightRow(this)"><td>TeamC</td><td>TeamD</td><td>0</td><td>3</td></tr>
+      </table>`;
+    }
+  </script>
+</head>
+<body onload="displayResults()">
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#results">Results</a>
+    <a href="#about">About</a>
+  </nav>
+  <h1>Football Match Results</h1>
+  <div id="results"></div>
+  <button onclick="alert('Button clicked!')">Click Me</button>
+  <footer>
+    © 2023 Football Match Results. All rights reserved.
+  </footer>
+</body>
+</html>
